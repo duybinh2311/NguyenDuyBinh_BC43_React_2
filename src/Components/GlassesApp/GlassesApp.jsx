@@ -85,6 +85,7 @@ export default class GlassesApp extends Component {
     ],
     buttonActive: 0,
   }
+  /* Pick Glass To Model */
   pickGlass = (glass) => {
     this.setState({
       modelGlass: glass,
@@ -92,6 +93,7 @@ export default class GlassesApp extends Component {
       buttonActive: glass.id,
     })
   }
+  /* Reset Model To Default */
   resetGlass = () => {
     this.setState({
       modelGlass: {
@@ -111,6 +113,7 @@ export default class GlassesApp extends Component {
       buttonActive: 0,
     })
   }
+  /* Undo Model Default*/
   undoModel = () => {
     this.setState({
       modelGlass: {
@@ -122,6 +125,7 @@ export default class GlassesApp extends Component {
       },
     })
   }
+  /* Return Glass Is Select*/
   returnGlass = () => {
     this.setState({
       modelGlass: this.state.glassReturn,
@@ -172,7 +176,6 @@ export default class GlassesApp extends Component {
               </div>
             </div>
           </div>
-
           {/* Model */}
           <div className="col-6">
             <div className="w-50 mx-auto">
