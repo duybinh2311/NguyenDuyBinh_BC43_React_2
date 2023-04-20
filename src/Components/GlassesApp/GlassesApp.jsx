@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Model from './Model/Model'
+import GlassItem from './GlassItem/GlassItem'
 
 export default class GlassesApp extends Component {
   state = {
@@ -139,16 +140,13 @@ export default class GlassesApp extends Component {
             {this.state.glassList.map((glass) => {
               return (
                 <div className="col-4" key={glass.id}>
-                  <button
-                    className={`btn btn-outline-primary ${
-                      this.state.buttonActive === glass.id ? `active` : ''
-                    }`}
-                    onClick={() => {
+                  <GlassItem
+                    glassInfo={glass}
+                    pickGlass={() => {
                       this.pickGlass(glass)
                     }}
-                  >
-                    <img src={glass.url} alt="" className="w-100" />
-                  </button>
+                    active={glass.id === this.state.buttonActive}
+                  />
                 </div>
               )
             })}
